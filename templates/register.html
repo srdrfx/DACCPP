@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Đăng ký tài khoản</h2>
+
+<form method="post">
+    Username:
+    <input type="text" name="username" required>
+
+    Password:
+    <input type="password" name="password" required>
+
+    <button>Đăng ký</button>
+</form>
+
+<p style="color:green">{{ msg }}</p>
+
+<a href="/">⬅ Trang chủ</a>
+
+</body>
+</html>
+

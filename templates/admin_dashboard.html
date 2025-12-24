@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>QUẢN LÝ KHIẾU NẠI</h2>
+
+<table>
+    <tr>
+        <th>Họ tên</th>
+        <th>Email</th>
+        <th>Nội dung</th>
+        <th>Trạng thái</th>
+        <th>Hành động</th>
+    </tr>
+
+    {% for c in complaints %}
+    <tr>
+        <td>{{ c.name }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.complaint }}</td>
+        <td>{{ c.status }}</td>
+        <td>
+            <a href="/update_status/{{ c._id }}/Đang xử lý">Đang xử lý</a>
+            <a href="/update_status/{{ c._id }}/Hoàn tất">Hoàn tất</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/">⬅ Trang chủ</a>
+
+</body>
+</html>
+
+
+
+
+
